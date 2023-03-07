@@ -1,5 +1,5 @@
 matplotlib==3.5.2
-numpy==1.21.1
+numpy==1.22.0
 torch==1.13.1
 torchvision==0.14.1
 typing_extensions==4.5.0
