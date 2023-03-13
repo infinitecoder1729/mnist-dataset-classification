@@ -64,3 +64,21 @@ This is implemented as :
 
 https://github.com/infinitecoder1729/mnist-dataset-classification/blob/0fa674e4325acf4e82ea8513c948062677d04baf/MNIST%20Classification%20Model..py#L16-L18
 
+### Creating the Neural network Sequence :
+
+#### Definining the Model Sequence : 
+
+Although a wide range of activation algorithms and formulations can be used and it can be discovered in depth. But for simplicity, LeakyReLU has been used for Hidden Layer [PyTorch LeakyReLU](https://pytorch.org/docs/stable/generated/torch.nn.LeakyReLU.html). The input layer and output have Linear activation [PyTorch Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html). Logsoftmax has been used to formulate the output [PyTorch LogSoftmax](https://pytorch.org/docs/stable/generated/torch.nn.LogSoftmax.html)
+
+The implementation is in : 
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/0fa674e4325acf4e82ea8513c948062677d04baf/MNIST%20Classification%20Model..py#L20-L23
+
+#### Defining the loss function : 
+
+Similar to above, many loss functions can be used to compute the loss but again for simplicity, NLLLoss i.e. Negatice Log Likelihood Loss has been used [PyTorch NLLLoss](https://pytorch.org/docs/stable/generated/torch.nn.NLLLoss.html)
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/0fa674e4325acf4e82ea8513c948062677d04baf/MNIST%20Classification%20Model..py#L25
+
+## Step 3 : Training the model on the dataset
+
