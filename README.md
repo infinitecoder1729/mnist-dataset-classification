@@ -162,6 +162,7 @@ view_classify(image.view(1, 28, 28), ps)
 
 1. Working on making graphical representation of useful data such as Loss vs Epoch Number etc.
 2. Looking to test with different algorithms to strike a balance between training time and accuracy.
+3. A Jupyter Notebook containing the outputs of the code would also be uploaded
 
 ### Contributions, Suggestions, and inputs on graphical representation for better understanding are welcome. 
 
