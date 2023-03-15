@@ -82,3 +82,67 @@ https://github.com/infinitecoder1729/mnist-dataset-classification/blob/0fa674e43
 
 ## Step 3 : Training the model on the dataset
 
+We have used SGD as Optimization Algorithm here with learning rate (lr) = 0.003 and momentum = 0.9 as suggested in general sense. [Typical lr values range from 0.0001 up to 1 and it is upon us to find a suitable value by cross validation
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaeead36b9a8d1458b51b6f70fc3d8873e3/MNIST%20Classification%20Model..py#L33
+
+To calculate the total training time, time module has been used. (Lines 34 and 48)
+
+Trial and Error method can be used to find the suitable epoch value, for this code, it has been setup to be 18
+
+Overall Training is being done as :
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaeead36b9a8d1458b51b6f70fc3d8873e3/MNIST%20Classification%20Model..py#L33-L49
+
+## Step 4 : Testing the Model 
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaeead36b9a8d1458b51b6f70fc3d8873e3/MNIST%20Classification%20Model..py#L51-L66
+
+## Step 5 : Saving the model 
+
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaeead36b9a8d1458b51b6f70fc3d8873e3/MNIST%20Classification%20Model..py#L68
+
+## To View results for any random picture in the dataset, the following code can be used :
+
+It also creates a graph displaying the probabilities returned by the model.
+
+```py
+import numpy as np
+def view_classify(img, ps):
+    ps = ps.cpu().data.numpy().squeeze()
+    fig, (ax1, ax2) = plt.subplots(figsize=(6,9), ncols=2)
+    ax1.imshow(img.resize_(1, 28, 28).numpy().squeeze())
+    ax1.axis('off')
+    ax2.barh(np.arange(10), ps)
+    ax2.set_aspect(0.1)
+    ax2.set_yticks(np.arange(10))
+    ax2.set_yticklabels(np.arange(10))
+    ax2.set_title('Class Probability')
+    ax2.set_xlim(0, 1.1)
+    plt.tight_layout()
+img,label=train[np.random.randint(0,10001)] 
+image=img.view(1, 784)
+with tch.no_grad():
+  logps = model(image)
+ps = tch.exp(logps)
+probab = list(ps.numpy()[0])
+print("Predicted Digit =", probab.index(max(probab)))
+view_classify(image.view(1, 28, 28), ps)
+```
+
+### Examples : 
+
+![image](https://user-images.githubusercontent.com/77016507/225422901-908e96de-629f-4d33-b7ba-819960a97d66.png)
+
+![image](https://user-images.githubusercontent.com/77016507/225423008-3f858a52-2331-48e1-b271-f6d6e25e2d91.png)
+
+![image](https://user-images.githubusercontent.com/77016507/225423232-d0249b38-e191-495d-b9fd-8c32eb20da57.png)
+
+### Model Accuracy : The Accuracy of the model with this code is approximately 97.8% to 98.02% with a training time of aprox. 3.5 to 4 minutes
+
+## Further Improvements :
+
+1. Working on making graphical representation of useful data such as Loss vs Epoch Number etc.
+2. Looking to test with different algorithms to strike a balance between training time and accuracy.
+
+### Contributions, Suggestions, and inputs on graphical representation for better understanding are welcome. 
