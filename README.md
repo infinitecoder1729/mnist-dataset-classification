@@ -1,5 +1,23 @@
 # MNIST Dataset Classification 
+
 > ~A standard (non-convolution based) neural network to classify the MNIST dataset.
+
+# Table of contents
+
+- [Step 1 : Setting up the database](#step-1--setting-up-the-database)
+  - [Downloading and Transforming the database :](#downloading-and-transforming-the-database-)
+  - [Getting to know the dataset better :](#getting-to-know-the-dataset-better-)
+  - [Deciding on whether to use batches or not :](#deciding-on-whether-to-use-batches-or-not-)
+- [Step 2 : Creating the neural network](#step-2--creating-the-neural-network)
+  - [Deciding on Number of Hidden Layers and neurons :](#deciding-on-number-of-hidden-layers-and-neurons-)
+  - [Creating the Neural network Sequence :](#creating-the-neural-network-sequence-)
+- [Step 3 : Training the model on the dataset](#step-3--training-the-model-on-the-dataset)
+- [Step 4 : Testing the Model](#step-4--testing-the-model)
+- [Step 5 : Saving the model](#step-5--saving-the-model)
+- [To View results for any random picture in the dataset, the following code can be used :](#to-view-results-for-any-random-picture-in-the-dataset-the-following-code-can-be-used-)
+  - [Examples](#examples-)
+  - [Model Accuracy](#model-accuracy--the-accuracy-of-the-model-with-this-code-is-approximately-978-to-9802-with-a-training-time-of-aprox-35-to-4-minutes)
+- [Further Improvements](#further-improvements-)
 
 The MNIST Database contains gray-scale images of 28x28 dimension where each image represents a handwritten digit which the network has to identify.
 
@@ -146,3 +164,5 @@ view_classify(image.view(1, 28, 28), ps)
 2. Looking to test with different algorithms to strike a balance between training time and accuracy.
 
 ### Contributions, Suggestions, and inputs on graphical representation for better understanding are welcome. 
+
+# One of the trained model is uploaded to this repository as well for reference purposes.
