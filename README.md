@@ -14,6 +14,7 @@
 - [Step 3 : Training the model on the dataset](#step-3--training-the-model-on-the-dataset)
 - [Step 4 : Testing the Model](#step-4--testing-the-model)
 - [Step 5 : Saving the model](#step-5--saving-the-model)
+- [Step 6 : Logging of Parameters during Model Training and Testing](https://github.com/infinitecoder1729/mnist-dataset-classification/edit/main/README.md#step-6--logging-of-parameters-during-model-training-and-testing)
 - [To View results for any random picture in the dataset, the following code can be used :](#to-view-results-for-any-random-picture-in-the-dataset-the-following-code-can-be-used-)
   - [Examples](#examples-)
   - [Model Accuracy](#model-accuracy--the-accuracy-of-the-model-with-this-code-is-approximately-978-to-9802-with-a-training-time-of-aprox-35-to-4-minutes)
@@ -120,6 +121,22 @@ https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaee
 
 https://github.com/infinitecoder1729/mnist-dataset-classification/blob/a014ffaeead36b9a8d1458b51b6f70fc3d8873e3/MNIST%20Classification%20Model..py#L68
 
+## Step 6 : Logging of Parameters during Model Training and Testing
+
+To log and vizualize the model parameters, Tensorboard has being used. For now, It logs Loss vs Epoch data for which graph can be accessed using :
+
+```bash
+tensorboard --logdir=runs
+```
+
+The Logging happens at :
+https://github.com/infinitecoder1729/mnist-dataset-classification/blob/c4d559e6e3d4e49cbbaef084f0150a677c4e7408/MNIST%20Classification%20Model..py#L44
+
+Following type of a graph is achieved as a result. It may vary if you change the algorithms and other parameters of the model :
+
+![image](https://user-images.githubusercontent.com/77016507/236678310-bc09ca50-0e1f-4a05-84c6-8cb4b86d2142.png)
+
+
 ## To View results for any random picture in the dataset, the following code can be used :
 
 It also creates a graph displaying the probabilities returned by the model.
@@ -160,10 +177,10 @@ view_classify(image.view(1, 28, 28), ps)
 
 ## Further Improvements :
 
-1. Working on making graphical representation of useful data such as Loss vs Epoch Number etc.
+1. Working on expanding Logging and Graphing to Other Parameters to give a more comprehensive assessment of the model's performance.
 2. Looking to test with different algorithms to strike a balance between training time and accuracy.
 3. A Jupyter Notebook containing the outputs of the code would also be uploaded
 
-### Contributions, Suggestions, and inputs on graphical representation for better understanding are welcome. 
+### Contributions, Suggestions, and inputs on logging and graphical representation for better understanding are welcome. 
 
 # One of the trained model is uploaded to this repository as well for reference purposes.
