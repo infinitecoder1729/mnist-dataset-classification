@@ -12,7 +12,6 @@ print("No. of Test examples: ",len(test))
 
 train_batch = tch.utils.data.DataLoader(train, batch_size=30, shuffle=True)
 
-
 input = 784
 hidden = 490
 output = 10
@@ -40,6 +39,7 @@ for num in range(epochs):
         optimize.zero_grad()
         output = model(images)
         loss = lossfn(output, labels)
+        writer.add_scalar("Loss", loss, num)
         loss.backward()
         optimize.step()
         run += loss.item()
@@ -47,6 +47,8 @@ for num in range(epochs):
         print("Epoch Number : {} = Loss : {}".format(num, run/len(train_batch)))
 Elapsed=(time()-time_start)/60
 print("\nTraining Time (in minutes) : ",Elapsed)
+writer.flush()
+writer.close()
 
 correct=0
 all = 0
