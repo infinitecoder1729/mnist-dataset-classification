@@ -4,6 +4,8 @@ import torchvision.transforms as trans
 import torch.nn as nn
 import matplotlib.pyplot as plt
 from time import time
+from torch.utils.tensorboard import SummaryWriter
+writer = SummaryWriter()
 
 train = dt.MNIST(root="./datasets", train=True, transform=trans.ToTensor(), download=True)
 test = dt.MNIST(root="./datasets", train=False, transform=trans.ToTensor(), download=True)
