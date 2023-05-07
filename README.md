@@ -179,7 +179,6 @@ view_classify(image.view(1, 28, 28), ps)
 
 1. Working on expanding Logging and Graphing to Other Parameters to give a more comprehensive assessment of the model's performance.
 2. Looking to test with different algorithms to strike a balance between training time and accuracy.
-3. A Jupyter Notebook containing the outputs of the code would also be uploaded
 
 ### Contributions, Suggestions, and inputs on logging and graphical representation for better understanding are welcome. 
 
